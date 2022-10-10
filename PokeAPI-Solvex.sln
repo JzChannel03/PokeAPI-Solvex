@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPI-Solvex", "PokeAPI-Solvex\PokeAPI-Solvex.csproj", "{4F480A0A-14E0-467C-BCCB-D985C223515A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Presentation", "PokeAPI-Solvex\PokeAPI.Presentation.csproj", "{4F480A0A-14E0-467C-BCCB-D985C223515A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.DataAccess_Layer", "PokeAPI.DataAccessB\PokeAPI.DataAccess_Layer.csproj", "{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPI.Entity_Layer", "PokeAPI.Entity_Layer\PokeAPI.Entity_Layer.csproj", "{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPI.Business_Layer", "PokeAPI.Business_Layer2\PokeAPI.Business_Layer.csproj", "{8CC3C870-4115-482A-8FC5-FBFB407ABECB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{4F480A0A-14E0-467C-BCCB-D985C223515A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F480A0A-14E0-467C-BCCB-D985C223515A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F480A0A-14E0-467C-BCCB-D985C223515A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC3C870-4115-482A-8FC5-FBFB407ABECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC3C870-4115-482A-8FC5-FBFB407ABECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC3C870-4115-482A-8FC5-FBFB407ABECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC3C870-4115-482A-8FC5-FBFB407ABECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
