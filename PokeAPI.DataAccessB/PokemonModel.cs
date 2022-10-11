@@ -3,6 +3,7 @@ using PokeAPI.Entity_Layer.Context;
 using PokeAPI.Entity_Layer.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,45 @@ namespace PokeAPI.DataAccess_Layer
 
         public async Task<List<FavoritePokemon>> readFavoritePokemons()
         {
-            
             return await context.FavoritePokemons.ToListAsync();
+        }
+
+        public async Task<bool> setFavoritePokemon(int id)
+        {
+            try
+            {
+                var item = await context.FavoritePokemons.FirstOrDefaultAsync(i => i.IDPokemon == id);
+                if (item != null)
+                {
+                    await context.Set<FavoritePokemon>().AddAsync(new FavoritePokemon() { IDPokemon = id });
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public bool deleteFavoritePokemon(int id)
+        {
+            try
+            {
+                var itemToRemove = context.FavoritePokemons.SingleOrDefault(x => x.IDPokemon == id);
+                context.FavoritePokemons.Remove(itemToRemove!);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            
         }
     }
 }

@@ -6,7 +6,7 @@ namespace PokeAPI_Solvex.Models
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Ability
     {
-        public Ability? ability { get; set; }
+        public Ability2? ability { get; set; }
         public bool is_hidden { get; set; }
         public int slot { get; set; }
     }
@@ -198,7 +198,7 @@ namespace PokeAPI_Solvex.Models
 
     public class Move
     {
-        public Move? move { get; set; }
+        public Move2? move { get; set; }
         public List<VersionGroupDetail>? version_group_details { get; set; }
     }
 
@@ -248,16 +248,6 @@ namespace PokeAPI_Solvex.Models
         public object? front_shiny_female { get; set; }
     }
 
-    public class RedBlue
-    {
-        public string? back_default { get; set; }
-        public string? back_gray { get; set; }
-        public string? back_transparent { get; set; }
-        public string? front_default { get; set; }
-        public string? front_gray { get; set; }
-        public string? front_transparent { get; set; }
-    }
-
     public class PokemonDTO
     {
         public List<Ability>? abilities { get; set; }
@@ -278,6 +268,16 @@ namespace PokeAPI_Solvex.Models
         public List<Stat>? stats { get; set; }
         public List<Type>? types { get; set; }
         public int weight { get; set; }
+    }
+
+    public class RedBlue
+    {
+        public string? back_default { get; set; }
+        public string? back_gray { get; set; }
+        public string? back_transparent { get; set; }
+        public string? front_default { get; set; }
+        public string? front_gray { get; set; }
+        public string? front_transparent { get; set; }
     }
 
     public class RubySapphire

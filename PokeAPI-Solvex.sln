@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Presentation", "Pok
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.DataAccess_Layer", "PokeAPI.DataAccessB\PokeAPI.DataAccess_Layer.csproj", "{6A82BE13-81CC-47EC-AAD2-D372AC84AB15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPI.Entity_Layer", "PokeAPI.Entity_Layer\PokeAPI.Entity_Layer.csproj", "{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Entity_Layer", "PokeAPI.Entity_Layer\PokeAPI.Entity_Layer.csproj", "{88C26667-EDEA-4CE2-82A8-BB1B8990E4BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeAPI.Business_Layer", "PokeAPI.Business_Layer2\PokeAPI.Business_Layer.csproj", "{8CC3C870-4115-482A-8FC5-FBFB407ABECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Business_Layer", "PokeAPI.Business_Layer2\PokeAPI.Business_Layer.csproj", "{8CC3C870-4115-482A-8FC5-FBFB407ABECB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

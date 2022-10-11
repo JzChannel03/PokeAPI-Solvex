@@ -36,9 +36,7 @@ namespace PokeAPI.Entity_Layer.Context
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.UrlPokemon)
-                    .HasMaxLength(40)
-                    .IsUnicode(false);
+                entity.Property(e => e.IDPokemon).HasColumnName("IDPokemon");
             });
 
             OnModelCreatingPartial(modelBuilder);
