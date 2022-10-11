@@ -6,11 +6,13 @@ using PokeAPI.Business_Layer.Services;
 using PokeAPI.Entity_Layer.Entities;
 using PokeAPI.Entity_Layer.Models;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace PokeAPI_Solvex.Controllers
 {
     [ApiController]
     [Route("api/pokemons")]
+    [Produces("application/json")]
     public class PokemonsController : ControllerBase
     {
         private readonly ILogger<PokemonsController> _logger;
@@ -21,16 +23,28 @@ namespace PokeAPI_Solvex.Controllers
         }
 
         [HttpGet("favorite")]
-        public ActionResult<IEnumerable<PokemonData>> GetFavorites()
+        public ActionResult<JSONData<PokemonData>> GetFavorites()
         {
-            return new PokemonWorkService_Get().GetFavoritePokemons().Result.ToArray();
+            return new JSONData<PokemonData>() 
+            { 
+                Data = new PokemonWorkService_Get()
+                .GetFavoritePokemons()
+                .Result
+                .ToArray() 
+            };
         }
 
         [HttpGet("listpokemon")]
-        public ActionResult<IEnumerable<PokemonData>> GetListPokemon(int first, int last)
+        public ActionResult<JSONData<PokemonData>> GetListPokemon(int first, int last)
         {
             if (first <= 0) return NotFound();
-            return new PokemonWorkService_Get().GetPokemonList(first, last).Result.ToArray();
+            return new JSONData<PokemonData>()
+            { 
+                Data = new PokemonWorkService_Get()
+                .GetPokemonList(first, last)
+                .Result
+                .ToArray() 
+            };
         }
 
         [HttpPost("favorite/{id:int}")]
