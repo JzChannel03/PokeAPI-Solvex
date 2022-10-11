@@ -37,10 +37,10 @@ namespace PokeAPI_Solvex.Controllers
         public ActionResult PostFavorites(int id)
         {
             
-            if (!(id > 0))
+            if ((id <= 0))
                 return BadRequest();
             if (!(new PokemonWorkService_Post().SetFavoritePokemon(id)))
-                return BadRequest();
+                return BadRequest(new { message = "This pokemon is already a favorite" });
 
             return Ok();
 
@@ -53,7 +53,7 @@ namespace PokeAPI_Solvex.Controllers
                 new PokemonWorkService_Delete().DeleteFavoritePokemon(id) == true
             ) return Ok();
 
-            else return BadRequest();
+            else return NotFound();
         }
     }
 }

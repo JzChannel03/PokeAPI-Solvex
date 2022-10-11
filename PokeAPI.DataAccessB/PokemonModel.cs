@@ -23,8 +23,8 @@ namespace PokeAPI.DataAccess_Layer
         {
             try
             {
-                var item = await context.FavoritePokemons.FirstOrDefaultAsync(i => i.IDPokemon == id);
-                if (item != null)
+                var item = await context.FavoritePokemons.SingleOrDefaultAsync(i => i.IDPokemon == id);
+                if (item == null)
                 {
                     await context.Set<FavoritePokemon>().AddAsync(new FavoritePokemon() { IDPokemon = id });
                     await context.SaveChangesAsync();
@@ -45,9 +45,13 @@ namespace PokeAPI.DataAccess_Layer
             try
             {
                 var itemToRemove = context.FavoritePokemons.SingleOrDefault(x => x.IDPokemon == id);
-                context.FavoritePokemons.Remove(itemToRemove!);
-                context.SaveChanges();
-                return true;
+                if (itemToRemove != null)
+                {
+                    context.FavoritePokemons.Remove(itemToRemove!);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             catch (Exception e)
             {
