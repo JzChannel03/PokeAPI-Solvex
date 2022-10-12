@@ -1,5 +1,6 @@
 ﻿
 using Business_Layer.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PokeAPI.Business_Layer.Services;
