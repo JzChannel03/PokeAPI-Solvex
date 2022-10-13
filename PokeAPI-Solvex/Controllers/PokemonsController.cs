@@ -31,6 +31,7 @@ namespace PokeAPI_Solvex.Controllers
                 Data = new PokemonWorkService_Get()
                 .GetFavoritePokemons()
                 .Result
+                .OrderBy(x => x.ID)
                 .ToArray() 
             };
         }
@@ -61,7 +62,7 @@ namespace PokeAPI_Solvex.Controllers
 
         }
 
-        [HttpDelete("favorite/{id:int}")]
+        [HttpPost("favorite/delete/{id:int}")]
         public ActionResult DeleteFavorites(int id)
         {
             if (
